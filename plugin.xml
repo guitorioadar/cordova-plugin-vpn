@@ -67,6 +67,13 @@
             <meta-data android:name="allowWiFi" android:value="$ALLOWWIFI" />
         </config-file>
 
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+                <application
+                    android:allowBackup="false"
+                    android:name="org.strongswan.android.logic.StrongSwanApplication"
+                />
+        </edit-config>
+
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -80,12 +87,18 @@
             </feature>
         </config-file>
 
-        <lib-file src="src/android/libs/AQStrongSwan.jar" />
+        <!-- <lib-file src="src/android/libs/AQStrongSwan.jar" /> -->
+        <!-- <lib-file src="src/android/libs/AQStrongSwan.aar" /> -->
+        <framework src="src/android/AQStrongSwanRel.gradle" custom="true" type="gradleReference" />
+        <resource-file src="src/android/libs/AQStrongSwanRel.aar" target="libs/AQStrongSwanRel.aar" />
 
         <source-file src="src/android/VPNManager.java" target-dir="src/com/plugin/VPNManager" />
         <source-file src="src/android/CordovaVPNStateListener.java" target-dir="src/com/plugin/VPNManager" />
         <source-file src="src/android/ConnectionValidityChecker.java" target-dir="src/com/plugin/VPNManager" />
         <source-file src="src/android/StateConversion.java" target-dir="src/com/plugin/VPNManager" />
+
+
+        <!-- armeabi -->
         <source-file src="src/android/libs/armeabi/libstrongswan.so" target-dir="libs/armeabi" />
         <source-file src="src/android/libs/armeabi/libhydra.so" target-dir="libs/armeabi" />
         <source-file src="src/android/libs/armeabi/libcharon.so" target-dir="libs/armeabi" />
@@ -94,6 +107,49 @@
         <source-file src="src/android/libs/armeabi/libtncif.so" target-dir="libs/armeabi" />
         <source-file src="src/android/libs/armeabi/libtnccs.so" target-dir="libs/armeabi" />
         <source-file src="src/android/libs/armeabi/libimcv.so" target-dir="libs/armeabi" />
+
+        <!-- armeabi-v7a -->
+        <source-file src="src/android/libs/armeabi-v7a/libstrongswan.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libhydra.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libcharon.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libipsec.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libandroidbridge.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libtncif.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libtnccs.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/armeabi-v7a/libimcv.so" target-dir="libs/armeabi-v7a" />
+
+
+        <!-- arm64-v8a -->
+        <source-file src="src/android/libs/arm64-v8a/libstrongswan.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libhydra.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libcharon.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libipsec.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libandroidbridge.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libtncif.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libtnccs.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/arm64-v8a/libimcv.so" target-dir="libs/arm64-v8a" />
+
+
+        <!-- x86 -->
+        <source-file src="src/android/libs/x86/libstrongswan.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libhydra.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libcharon.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libipsec.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libandroidbridge.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libtncif.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libtnccs.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86/libimcv.so" target-dir="libs/x86" />
+
+
+        <!-- x86_64 -->
+        <source-file src="src/android/libs/x86_64/libstrongswan.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libhydra.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libcharon.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libipsec.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libandroidbridge.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libtncif.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libtnccs.so" target-dir="libs/x86_64" />
+        <source-file src="src/android/libs/x86_64/libimcv.so" target-dir="libs/x86_64" />
 
 
     </platform>

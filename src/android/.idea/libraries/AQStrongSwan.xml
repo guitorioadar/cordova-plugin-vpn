@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AQStrongSwan">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/AQStrongSwan.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

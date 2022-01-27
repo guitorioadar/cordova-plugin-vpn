@@ -1,0 +1,29 @@
+{
+  "name": "com.aquto.cordova.VPNManager",
+  "version": "0.0.1",
+  "description": "\n        Allows users to provision, enable and disable a vpn\n    ",
+  "cordova": {
+    "id": "com.aquto.cordova.VPNManager",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guitorioadar/cordova-plugin-vpn.git"
+  },
+  "keywords": [
+    "cordova",
+    "vpn",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "guitorioadar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guitorioadar/cordova-plugin-vpn/issues"
+  },
+  "homepage": "https://github.com/guitorioadar/cordova-plugin-vpn#readme"
+}
