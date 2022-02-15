@@ -1,5 +1,6 @@
 cordova-plugin-vpn
 ======================
+`version 0.0.1`
 
 IOS
 ---
